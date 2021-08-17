@@ -23,15 +23,17 @@ function App() {
 
   return (
     <>
-      <button onClick={undo}>undo</button>
-      <button onClick={redo}>redo</button>
+      <button data-testid="undoBtn" onClick={undo}>undo</button>
+      <button data-testid="redoBtn" onClick={redo}>redo</button>
       <input
         type="color"
         value={current}
         onChange={({ target }) => record(target.value)}
+        data-testid="input"
       />
       <div
         style={{ backgroundColor: current, width: '10rem', height: '10rem' }}
+        data-testid="display"
       ></div>
     </>
   );
